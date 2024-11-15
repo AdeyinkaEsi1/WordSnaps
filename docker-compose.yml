@@ -1,0 +1,37 @@
+
+services:
+  web:
+    build:
+      context: ./backend
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      POSTGRES_DB: wordsnaps_db
+      POSTGRES_USER: your_db_user
+      POSTGRES_PASSWORD: your_db_password
+      POSTGRES_HOST: db  # Ensure Django knows to connect to the "db" service
+      POSTGRES_PORT: 5432
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: wordsnaps_db
+      POSTGRES_USER: your_db_user
+      POSTGRES_PASSWORD: your_db_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  frontend:
+    build:
+      context: ./frontend
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+
+volumes:
+  postgres_data:
