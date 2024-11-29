@@ -10,52 +10,9 @@
 
 <body>
 
-    <header class="sticky top-0">
-
-        <div class="bg-teal-800 justify-evenly flex p-2 items-center">
-            <div>
-                <a class="font-extrabold text-amber-500 p-4 text-2xl">WORDSNAPS</a>
-            </div>
-
-            <div class="relative">
-                <span
-                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
-                <a class="font-extrabold text-amber-500 p-4 text-2xl relative inline-flex ">PREDICTOR</a>
-            </div>
-        </div>
-
-    </header>
-
-    <div class="flex items-center justify-center mt-24">
-        <div class="flex bg-gray-100 border-4 border-amber-500 h-96 w-1/2 justify-between">
-
-            <div class="p-4">
-                <h2 class="font-serif text-2xl ml-8">Select Match</h2>
-                <form class="mt-4 ml-8">
-                    <select name="match" id="match" aria-label="#" class="w-full bg-teal-800 text-amber-500 h-8">
-                        <option value="1">Ars v Nott</option>
-                        <option value="2">Liv v Che</option>
-                        <option value="3">Ips v Everton</option>
-                        <option value="4">Ful v Utd</option>
-                        <option value="5">Bou v Sou</option>
-                        <option value="6">Bri v City</option>
-                        <option value="7">Lei v Cry</option>
-                        <option value="8">Tott v Villa</option>
-                    </select>
-                    <button id="predict-button" type="submit"
-                        class="font-serif mt-8 text-2xl bg-amber-500 text-teal-800 rounded-full p-4 h-16 w-full">Predict</button>
-                </form>
-            </div>
-
-            <div class="p-4">
-                <h2 class="font-serif text-2xl mr-12">Outcome</h2>
-                <div class="bg-white p-8 mr-12 w-36 h-32">
-
-                </div>
-            </div>
-
-        </div>
-    </div>
+    <input type="text" id="word-input" placeholder="Enter a word">
+    <button id="get-definition">Define</button>
+    <div id="definition" class="bg-amber-500 text-white h-28"></div>
 
     <script src="/frontend/dist/index.js"></script>
 </body>
